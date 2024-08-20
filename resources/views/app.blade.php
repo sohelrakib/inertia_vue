@@ -31,7 +31,7 @@
 
 <body>
     <div class="container">
-        <h1>Start</h1>
+        <h1>parent component</h1>
         @inertia
     </div>
 </body>
