@@ -43,22 +43,29 @@ export default {
   props: {
     posts: Array,
   },
+
+  data() {
+        return {
+          baseUrl: 'http://localhost/inertia_vue/public',
+        }
+  },
+
   methods: {
     delete_post(id) {
-      const baseUrl = 'http://localhost/inertia_vue/public';
+      // const baseUrl = 'http://localhost/inertia_vue/public';
       if (confirm('Are you sure you want to delete this post?')) {
-        this.$inertia.delete(`${baseUrl}/posts/${id}`);
+        this.$inertia.delete(`${this.baseUrl}/posts/${id}`);
       }
     },
 
     edit_post(id) {
-        const baseUrl = 'http://localhost/inertia_vue/public';
-        this.$inertia.get(`${baseUrl}/posts/${id}`);
+        // const baseUrl = 'http://localhost/inertia_vue/public';
+        this.$inertia.get(`${this.baseUrl}/posts/${id}`);
     },
 
     post_create() {
-        const baseUrl = 'http://localhost/inertia_vue/public';
-        this.$inertia.get(`${baseUrl}/create`);
+        // const baseUrl = 'http://localhost/inertia_vue/public';
+        this.$inertia.get(`${this.baseUrl}/create`);
     },
 
   },
