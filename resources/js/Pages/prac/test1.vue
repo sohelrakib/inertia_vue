@@ -11,6 +11,8 @@
     <br><br>
     <p>{{ "count: " + count }}</p>
     <button v-on:click="count++">Count</button>
+    <button v-on:click="addCount(5)">Count 5</button>
+    <button v-on:click="count -= 2">Count -2</button>
 
     <button v-on:click.once="createAlert">Create Alert</button>
   </div>
@@ -32,6 +34,10 @@ export default {
 
         createAlert() {
             alert("Alert created from button click")
+        },
+
+        addCount(number) {
+            this.count = this.count + number
         }
     },
 
